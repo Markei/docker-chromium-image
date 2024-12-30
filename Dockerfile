@@ -10,7 +10,7 @@ RUN groupadd user \
  && chown user:user /home/user/.fonts
 
 RUN apt-get update \
- && apt-get install --yes --no-install-recommends dumb-init fontconfig chromium
+ && apt-get install --yes --no-install-recommends dumb-init fontconfig ttf-mscorefonts-installer fonts-open-sans chromium
 
 USER user
 
