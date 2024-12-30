@@ -9,7 +9,7 @@ RUN groupadd user \
  && mkdir /home/user/.fonts \
  && chown user:user /home/user/.fonts
 
-RUN sed -i -e's/ main/ main contrib non-free/g' /etc/apt/sources.list \
+RUN sed -i -e's/ main/ main contrib non-free/g' /etc/apt/sources.list.d/debian.sources \
  && apt-get update \
  && apt-get install --yes --no-install-recommends dumb-init fontconfig ttf-mscorefonts-installer fonts-open-sans chromium
 
