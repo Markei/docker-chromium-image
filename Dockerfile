@@ -9,7 +9,8 @@ RUN groupadd user \
  && mkdir /home/user/.fonts \
  && chown user:user /home/user/.fonts
 
-RUN apt-get update \
+RUN sed -i -e's/ main/ main contrib non-free/g' /etc/apt/sources.list \
+ && apt-get update \
  && apt-get install --yes --no-install-recommends dumb-init fontconfig ttf-mscorefonts-installer fonts-open-sans chromium
 
 USER user
